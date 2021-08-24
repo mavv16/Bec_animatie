@@ -1,0 +1,188 @@
+:root {
+  --filamentcolor: rgb(73, 68, 73);
+}
+body {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: -10px;
+
+  /* animation part */
+  animation: licarit 5s infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+div {
+  position: relative;
+}
+
+#fir {
+  width: 6px;
+  height: 200px;
+  background: var(--filamentcolor);
+}
+#cap {
+  width: 40px;
+  height: 20px;
+  background: lightslategrey;
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  transform: translateY(100px);
+}
+/* soclu = portiunea cu lini*/
+#soclu {
+  width: 60px;
+  height: 30px;
+  border-radius: 3px;
+  background: lightslategrey;
+  position: absolute;
+  transform: translateY(120px);
+}
+.linie {
+  width: 100%;
+  height: 2px;
+  background: black;
+  margin: 5px 0px 5px;
+}
+
+/* balon sticla */
+.balon {
+  background: rgb(253, 215, 2);
+  position: absolute;
+}
+#sticla1 {
+  position: absolute;
+  width: 80px;
+  height: 50px;
+  top: 232px;
+  /* transform: translateY(158px); */
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: 0px 0px 100px rgb(255, 242, 121);
+}
+#sticla2 {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 270px;
+  /* transform: translateY(260px); */
+  border-radius: 100%;
+  box-shadow: 0px 0px 100px rgb(255, 242, 121),
+    0px 0px 5000px rgb(255, 242, 121);
+}
+
+/* filamentul becului format din multe parti */
+#dreapta-1,
+#dreapta-2 {
+  background: var(--filamentcolor);
+  position: inherit;
+  height: 100%;
+  width: 4px;
+}
+#dreapta-1 {
+  left: 27px;
+}
+#dreapta-2 {
+  right: 27px;
+}
+/* dreapta curbata */
+#curba-3,
+#curba-4,
+#curba-8,
+#curba-9 {
+  width: 200px;
+  height: 100px;
+  border: solid 4px var(--filamentcolor);
+}
+#curba-3 {
+  border-color: transparent var(--filamentcolor) transparent transparent;
+  border-radius: 100px 100px 0 0;
+  transform: translate(-127px, -5px) rotateX(0.5turn);
+}
+#curba-4 {
+  border-color: transparent transparent transparent var(--filamentcolor);
+  border-radius: 100px 100px 0 0;
+  transform: translate(99px, -111px) rotateX(0.5turn);
+}
+/* cerculetele */
+#cerc-5,
+#cerc-6,
+#cerc-7 {
+  border-radius: 100%;
+  border: solid 4px var(--filamentcolor);
+}
+#cerc-5 {
+  width: 15px;
+  height: 30px;
+  transform: translate(29px, -146px) skew(-20deg, 10deg);
+}
+#cerc-6 {
+  width: 20px;
+  height: 20px;
+  transform: translate(125px, -181px) skew(20deg, 5deg);
+}
+#cerc-7 {
+  width: 20px;
+  height: 40px;
+  transform: translate(80px, -196px) skew(-15deg, 20deg);
+}
+/* curbele care leaga cerculetele (practic ceea ce uneste bucla */
+#curba-8,
+#curba-9 {
+  height: 100px;
+  border-color: var(--filamentcolor) transparent transparent transparent;
+  border-radius: 50%/100px 100px 0 0;
+}
+#curba-8 {
+  width: 80px;
+  transform: translate(17px, -270px) rotate(20deg);
+}
+#curba-9 {
+  width: 60px;
+  transform: translate(90px, -375px) rotate(340deg);
+}
+#curba-cerc-10 {
+  width: 45px;
+  height: 50px;
+  background: rgba(48, 40, 53, 0.95);
+  background-blend-mode: overlay;
+  border: solid 2px rgba(48, 40, 53, 0.95);
+  border-color: transparent rgba(48, 40, 53, 0.95) rgba(48, 40, 53, 0.95)
+    rgba(48, 40, 53, 0.95);
+  border-radius: 0px 0px 20px 20px;
+  transform: translate(65px, -585px);
+}
+
+@keyframes licarit {
+  0% {
+    background: rgb(61, 163, 120);
+    opacity: 1;
+    transform: translateX(20px) rotate(20deg);
+  }
+  25% {
+    background: rgb(67, 131, 112);
+    opacity: 0.75;
+  }
+  50% {
+    background: rgb(55, 92, 78);
+    opacity: 0.5;
+  }
+  65% {
+    background: rgb(51, 66, 63);
+    opacity: 0.35;
+  }
+  80% {
+    background: rgb(44, 65, 59);
+    opacity: 0.25;
+  }
+  90% {
+    background: rgb(33, 46, 43);
+    opacity: 0.2;
+  }
+  100% {
+    background: rgb(0, 0, 0);
+    opacity: 0;
+    transform: translateX(-20px) rotate(-20deg);
+  }
+}
